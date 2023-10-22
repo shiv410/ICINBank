@@ -1,0 +1,33 @@
+<!-- <p>chequebookrequest works!</p> -->
+<br>
+<br>
+<div class="col-md-6 m-auto">
+    <div class="card">
+        <div class="card-header">
+            <h4 style="text-align: center;">Request Cheque Book</h4>
+        </div>
+        <div class="card-body ps-5 pe-5">
+            <div class="mb-4 ps-3" style="background-color: gainsboro;">
+                <div class="p-2">
+                    <h5>Account Number : {{requestingAccNo}}</h5>
+                    <!-- <label>{{requestingAccNo}}</label> -->
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="mb-2">Choose ChequeBook pages :</label>
+                <br>
+                <select class="form-select" (change)="filterSelected($event.target)">
+                    <option *ngFor="let p of pages" [value]='p.value'>
+                        {{p.name}}
+                    </option>
+                </select>
+                <br>
+                <button (click)="setOption()" class="btn btn-info form-control">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Request Chequebook</button>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

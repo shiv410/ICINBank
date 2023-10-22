@@ -1,0 +1,39 @@
+<!-- <p>transaction-history works!</p> -->
+
+<br>
+<div class="col-md-10 m-auto" style="background-color: whitesmoke;">
+    <h3 class="text-center p-3">Transaction History</h3>
+    <div class="row">
+        <div class="col-md-4 p-3">
+            <!-- <br /> -->
+            <h5 style="padding-left: 1rem">Type of account: Saving</h5>
+            <br />
+            <h5 style="padding-left: 1rem">Saving balance: {{ savingBalance }} </h5>
+            <br />
+            <h5 style="padding-left: 1rem">Account number: {{ accNo }}</h5>
+            <br />
+        </div>
+        <div class="col">
+            <div class="card">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center">Date</th>
+                            <th style="text-align: center">Transaction Id</th>
+                            <th style="text-align: center">Action Type</th>
+                            <th style="text-align: center">Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let transaction of transactionList">
+                            <td style="text-align: center">{{ transaction.date }}</td>
+                            <td style="text-align: center">{{ transaction.id }}</td>
+                            <td style="text-align: center">{{ transaction.action }}</td>
+                            <td style="text-align: center">{{ transaction.amount }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->

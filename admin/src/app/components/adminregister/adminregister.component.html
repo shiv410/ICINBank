@@ -1,0 +1,40 @@
+<!-- <p>adminregister works!</p> -->
+<div class="container">
+    <div>
+        <h4 class="fw-bold p-2">Unauthorized Users</h4>
+        <div>
+            <table class="table table-bordered text-center table-sm">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Date of Birth</th>
+                        <th>Type of Verification Document</th>
+                        <th>Verification ID No.</th>
+                        <th>Email</th>
+                        <th>Create Account</th>
+                        <th>Cancel Account Creation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let authorizeuser of authorizeusers">
+                        <td>{{authorizeuser.fname}}</td>
+                        <td>{{authorizeuser.lname}}</td>
+                        <td>{{authorizeuser.phone}}</td>
+                        <td>{{authorizeuser.address}}</td>
+                        <td>{{authorizeuser.dob}}</td>
+                        <td>{{authorizeuser.identityType}}</td>
+                        <td>{{authorizeuser.identity}}</td>
+                        <td>{{authorizeuser.email}}</td>
+                        <td><button type="button" class="btn btn-success"
+                                (click)="authorizeAccount(authorizeuser.username)">Create</button> </td>
+                        <td><button type="button" class="btn btn-danger"
+                                (click)="rejectRequest(authorizeuser.username)">Cancel</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

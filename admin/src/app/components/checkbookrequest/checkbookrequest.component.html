@@ -1,0 +1,29 @@
+<!-- <p>checkbookrequest works!</p> -->
+<h3 class="p-3">Cheque Book Requests</h3>
+
+<div class="ms-4 me-4">
+    <table class="table table-bordered text-center" style="overflow-x:auto;">
+        <thead>
+            <tr>
+                <th>Request Number</th>
+                <th>Type of Account</th>
+                <th>Account Number</th>
+                <th>Applied Date</th>
+                <th>Number of Pages</th>
+                <th> Confirm Request ?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let checkbookrequest of checkbookrequests">
+                <td>{{checkbookrequest.id}}</td>
+                <td>{{checkbookrequest.accType}}</td>
+                <td>{{checkbookrequest.account}}</td>
+                <td>{{checkbookrequest.date}}</td>
+                <td>{{checkbookrequest.no_of_pages}}</td>
+                <td><button (click)="confirmRequest(checkbookrequest.account)" class="btn btn-primary">Confirm
+                        Request</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

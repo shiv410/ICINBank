@@ -1,0 +1,35 @@
+<!-- <p>login works!</p> -->
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-4 m-auto">
+    <div class="card shadow-lg rounded-0">
+        <div class="card-header text-center">
+            <h1>Admin Portal</h1>
+        </div>
+        <div class="card-body">
+            <form class="form-login" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+
+                <label for="inputUserName" class="sr-only">UserName</label>
+                <input type="text" id="inputUserName" name="inputUserName" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && inputUserName.errors }" ngModel placeholder="UserName"
+                    required autofocus #inputUserName=ngModel>
+                <div *ngIf="submitted && inputUserName.errors" class="invalid-feedback">
+                    <span *ngIf="inputUserName.errors['required']">Please enter a UserName</span>
+                </div>
+
+                <br>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" name="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && password.errors }" ngModel placeholder="Password" required
+                    #password=ngModel>
+                <div *ngIf="submitted && password.errors" class="invalid-feedback">
+                    <span *ngIf="password.errors['required']">Please enter a Password</span>
+                </div>
+                <br>
+                <button class="btn btn-primary ps-4 pe-4" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>

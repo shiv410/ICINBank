@@ -1,0 +1,51 @@
+<!-- <p>useraccount works!</p> -->
+
+<div class="container">
+    <h3 class="p-2 bg-secondary-subtle">User Accounts</h3>
+    <table class="table table-bordered text-capitalize table-sm table-hover text-center">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>UserName</th>
+                <!--<th>Email</th>-->
+                <th>Primary Account Number</th>
+                <th>Savings Account Number</th>
+                <th>Enable Account</th>
+                <th>Disable Account</th>
+                <th>Features Granted to the User</th>
+                <th>Change Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.fname}}</td>
+                <td>{{user.lname}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.primaryAccno}}</td>
+                <td>{{user.savingsAccno}}</td>
+                <td><button (click)="enableLoginService(user.username)"
+                        class="btn btn-success btn-sm rounded-pill">Enable</button></td>
+                <td><button (click)="disableLoginService(user.username)"
+                        class="btn btn-danger btn-sm rounded-pill">Disable</button></td>
+                <td>{{user.featureStatus}}</td>
+                <td>
+                    <!-- <select (change)="filterSelected($event.target.value)">
+                        <option *ngFor="let r of roles" [value]='r.value' [selected]="r.value === 0">
+                            {{r.name}}
+                        </option>
+                    </select> -->
+                    <div class="btn-group">
+                        <select (change)="filterSelected($event)" class="form-select border-success form-select-sm">
+                            <option *ngFor="let r of roles" [value]='r.value'>
+                                {{r.name}}
+                            </option>
+                        </select>
+                        <button (click)="setOption(user.username)" class="btn btn-success btn-sm">Set</button>
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
